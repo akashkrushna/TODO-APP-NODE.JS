@@ -1,0 +1,15 @@
+{
+  "name": "todo-app-node.js",
+  "version": "1.0.0",
+  "description": "Coding Ninjas Mini Project One TODO APPLICATION",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AKASH KRUSHNA BARIK",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "mongoose": "^8.2.1"
+  }
+}
