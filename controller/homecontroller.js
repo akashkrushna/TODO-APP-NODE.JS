@@ -1,20 +1,19 @@
 const TodoLists = require('../models/todo_list')
 
 // function for redirecting to main home page
-module.exports.home = function(req,res){
-    // fetching using mongoose
-    TodoLists.find({},function(err,todo){
-        if(err){
-            console.log('error in fetching data');
-            return
-        }
-        
-        return res.render('homePage',{
-            title:"Home",
-            todoList:todo
-           
+module.exports.home = function(req, res) {
+    // Fetching using mongoose
+    TodoLists.find({})
+        .then(todo => {
+            return res.render('homePage', {
+                title: "Home",
+                todoList: todo
+            });
         })
-    })
+        .catch(err => {
+            console.log('Error in fetching data:', err);
+            return res.status(500).send('Internal Server Error');
+        });
 }
 // function for new Data
 function DateValeu(dueDate){
